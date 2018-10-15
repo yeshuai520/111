@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="wlkc">
+    <output-path>$PROJECT_DIR$/classes/artifacts/wlkc</output-path>
+    <root id="root" />
+  </artifact>
+</component>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<!-- 配置使用spring工厂 -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	 <!-- 改变文件上传总大小 20兆左右 -->
+	<!--woailuo-->
+	<constant name="struts.multipart.maxSize" value="20971520"></constant>
+	<!-- 开启开发模式 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 指定读取错误信息位置 -->
+	<constant name="struts.custom.i18n.resources" value="struts-messages"></constant>
+	
+	<package name="wlkc" namespace="/" extends="struts-default" >
+	
+		<!-- 全局结果定义 -->
+	<global-results>
+		<result name="toLogin" type="redirect" >/login.jsp</result>
+	</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.RuntimeException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="UserAction_*" class="userAction" method="{1}" >
+			<result name="toHome" type="redirect" >/index.jsp</result>
+			<result name="error"  >/login.jsp</result>
+		</action>
+	</package>
+</struts>
